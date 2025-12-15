@@ -1,0 +1,14 @@
+# Secrets
+.env*
+**/*.pem
+**/*.key
+
+# Backups / exports / logs
+**/*backup*
+**/*export*
+**/logs/**
+
+# Build / deps
+.next/**
+dist/**
+node_modules/**

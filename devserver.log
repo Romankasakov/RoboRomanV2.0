@@ -1,0 +1,16 @@
+
+> roboroman-neu@0.1.0 dev
+> next dev --port 3001
+
+   ▲ Next.js 16.0.10 (Turbopack)
+   - Local:         http://localhost:3001
+   - Network:       http://192.168.2.36:3001
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 853ms
+ ○ Compiling / ...
+ GET / 200 in 4.3s (compile: 3.6s, render: 697ms)
+ GET /neue-tools 200 in 1292ms (compile: 1033ms, render: 259ms)
+ GET /news 200 in 866ms (compile: 640ms, render: 226ms)
+[?25h

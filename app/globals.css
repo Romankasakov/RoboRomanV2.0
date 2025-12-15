@@ -1,26 +1,86 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 210 35% 6%;
+  --foreground: 168 30% 96%;
+  --muted: 200 25% 16%;
+  --muted-foreground: 188 10% 72%;
+  --popover: 210 35% 8%;
+  --popover-foreground: 168 30% 96%;
+  --card: 210 35% 8%;
+  --card-foreground: 168 30% 96%;
+  --border: 210 28% 18%;
+  --input: 210 28% 18%;
+  --primary: 165 77% 52%;
+  --primary-foreground: 168 50% 6%;
+  --secondary: 191 97% 46%;
+  --secondary-foreground: 190 100% 12%;
+  --accent: 160 100% 42%;
+  --accent-foreground: 164 40% 8%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --ring: 168 90% 52%;
+  --radius: 14px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply min-h-screen bg-background text-foreground antialiased;
+    background-image: radial-gradient(
+        circle at 20% 20%,
+        rgba(16, 225, 174, 0.08) 0,
+        transparent 30%
+      ),
+      radial-gradient(circle at 80% 0%, rgba(0, 217, 255, 0.06) 0, transparent 32%),
+      linear-gradient(135deg, #050b10 0%, #060a0f 35%, #07141f 100%);
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(16, 225, 174, 0.45);
+  }
+
+  ::selection {
+    background: rgba(16, 225, 174, 0.35);
+    color: #e8fff9;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold text-foreground;
+  }
+
+  p {
+    @apply text-muted-foreground;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply transition-colors duration-200;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass {
+    @apply border border-white/5 bg-white/5 backdrop-blur-xl shadow-card;
+  }
+
+  .glow {
+    box-shadow: 0 8px 40px rgba(16, 225, 174, 0.25);
+  }
 }
